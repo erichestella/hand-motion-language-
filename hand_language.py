@@ -49,3 +49,9 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
 
 #this code create a window for the images
           cv2.imshow('HAND GESTURE (FINAL PROJECT)', cv2.flip(image, 1))  
+
+#this code performs for closing the window
+          if cv2.waitKey(10) & 0xFF == ord('q'):
+             break
+cap.release()
+cv2.destroyAllWindows()
