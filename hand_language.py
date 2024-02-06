@@ -49,6 +49,10 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
                 mp_drawing_styles.get_default_hand_landmarks_style(),
                 mp_drawing_styles.get_default_hand_connections_style())
 
+                  #save images
+          cv2.imwrite(os.path.join('Output Images','{}.jpg'.format(uuid.uuid1())), image)
+
+
 #this code create a window for the images
           cv2.imshow('HAND GESTURE (FINAL PROJECT)', cv2.flip(image, 1))  
 
