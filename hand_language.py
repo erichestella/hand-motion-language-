@@ -31,5 +31,8 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
         #set flag ro {true}
           image.flags.writeable = True 
 
+        #RGB 2 GBR this code converts to each other
+          image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+
           #detections of the image
           print(results)
