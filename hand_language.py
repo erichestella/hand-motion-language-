@@ -13,7 +13,8 @@ mp_hands=mp.solutions.hands
 cap = cv2.VideoCapture(0)
 
 #its code track the hand 
-with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) as hands:
+with mp_hands.Hands(min_detection_confidence=0.8, 
+                    min_tracking_confidence=0.5) as hands:
      
      #this code will open the webcam 
     while cap.isOpened():
@@ -22,7 +23,8 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
           ret, frame = cap.read()
 
         #detections of the image
-          image= cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+          image= cv2.cvtColor(frame, 
+                              cv2.COLOR_BGR2RGB)
 
         #set flags to {false}
           image.flags.writeable = False
@@ -34,7 +36,8 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
           image.flags.writeable = True 
 
         #RGB 2 GBR this code converts to each other
-          image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+          image = cv2.cvtColor(image, 
+                               cv2.COLOR_RGB2BGR)
 
           #detections of the image
           print(results)
@@ -50,11 +53,15 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
                 mp_drawing_styles.get_default_hand_connections_style())
 
                   #save images
-          cv2.imwrite(os.path.join('Output Images','{}.jpg'.format(uuid.uuid1())), image)
+          cv2.imwrite(os.path.join('Output Images',
+                                   '{}.jpg'.format(uuid.uuid1())), 
+                                   image)
 
 
 #this code create a window for the images
-          cv2.imshow('HAND GESTURE (FINAL PROJECT)', cv2.flip(image, 1))  
+          cv2.imshow('HAND GESTURE (FINAL PROJECT)', 
+                     cv2.flip(image, 
+                              1))  
 
 #this code performs for closing the window
           if cv2.waitKey(10) & 0xFF == ord('q'):
