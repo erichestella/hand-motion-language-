@@ -36,3 +36,13 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
 
           #detections of the image
           print(results)
+
+          # it performs the results of the images
+          if results.multi_hand_landmarks:
+             for hand_landmarks in results.multi_hand_landmarks:
+                mp_drawing.draw_landmarks(
+                image,
+                hand_landmarks,
+                mp_hands.HAND_CONNECTIONS,
+                mp_drawing_styles.get_default_hand_landmarks_style(),
+                mp_drawing_styles.get_default_hand_connections_style())
