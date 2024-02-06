@@ -6,3 +6,6 @@ import cv2
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_drawing = mp.solutions.drawing_utils
 mp_hands=mp.solutions.hands
+
+#this is the webcam 
+cap = cv2.VideoCapture(0)
