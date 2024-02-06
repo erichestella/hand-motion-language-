@@ -22,10 +22,14 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
         #detections of the image
           image= cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
+        #set flags to {false}
+          image.flags.writeable = False
 
           #detections of the image
           results = hands.process(image)
 
+        #set flag ro {true}
+          image.flags.writeable = True 
 
           #detections of the image
           print(results)
