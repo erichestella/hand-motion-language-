@@ -15,3 +15,6 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
      
      #this code will open the webcam 
     while cap.isOpened():
+
+        #this variable represent the image from the webcam
+          ret, frame = cap.read()
