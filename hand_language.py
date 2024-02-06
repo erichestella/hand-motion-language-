@@ -18,3 +18,14 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
 
         #this variable represent the image from the webcam
           ret, frame = cap.read()
+
+        #detections of the image
+          image= cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+
+          #detections of the image
+          results = hands.process(image)
+
+
+          #detections of the image
+          print(results)
