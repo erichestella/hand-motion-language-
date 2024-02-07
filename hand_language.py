@@ -53,7 +53,7 @@ with mp_hands.Hands(min_detection_confidence=0.8,
                 mp_drawing_styles.get_default_hand_connections_style())
 
                   #save images
-          cv2.imwrite(os.path.join('Pictures',
+          cv2.imwrite(os.path.join('Pictures taken by the code',
                                    '{}.jpg'.format(uuid.uuid1())), 
                                    image)
 
